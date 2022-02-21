@@ -142,7 +142,7 @@ class PokeApi extends ChangeNotifier {
     final response = await http.get(Uri.parse("${urlBase}pokemon/$name"));
 
     if (response.statusCode == 200) {
-      return pokemonModelFromJson(response.body);
+      return pokemonModelFromJson(response.statusCode);
     } else {
       error = true;
       notifyListeners();
