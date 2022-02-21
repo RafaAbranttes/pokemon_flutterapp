@@ -28,7 +28,7 @@ class _HomeScreenState extends State<HomeScreen>
     _tabController = TabController(
       length: 3,
       vsync: this,
-      initialIndex: 2,
+      initialIndex: 3,
     );
   }
 
