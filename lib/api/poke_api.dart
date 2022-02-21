@@ -59,6 +59,7 @@ class PokeApi extends ChangeNotifier {
     loadingSearch = false;
     notifyListeners();
   }
+  
 
   Future<List<TypeAll>> fetchAllPokemons(int offset) async {
     final response = await http
@@ -142,7 +143,7 @@ class PokeApi extends ChangeNotifier {
     final response = await http.get(Uri.parse("${urlBase}pokemon/$name"));
 
     if (response.statusCode == 200) {
-      return pokemonModelFromJson(response.statusCode);
+      return pokemonModelFromJson(response.body);
     } else {
       error = true;
       notifyListeners();
